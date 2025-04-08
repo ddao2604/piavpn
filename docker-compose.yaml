@@ -1,0 +1,17 @@
+services:
+  pia-wireproxy:
+    restart: unless-stopped
+    build:
+      context: .
+    ports:
+      - "26000-26120:26000-26120"
+      - "25000-25120:25000-25120"
+    environment:
+      - PIA_USER=p2434126
+      - PIA_PASS=NyqMN4Ck9d
+      - PIA_LOCS=US
+      - PIA_PORT_START=26001
+      - PIA_HEL_START=25001
+      - SOCKS_USER=admin
+      - SOCKS_PASS=admin
+      - HEALTH_SLEEP=10
